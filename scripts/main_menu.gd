@@ -14,5 +14,5 @@ func _on_play_pressed():
 	tween.tween_property(play_button, "modulate:a", 0.0, 0.5)
 
 	tween.finished.connect(func():
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		get_tree().change_scene_to_file("res://scenes/introduction.tscn")
 	)
