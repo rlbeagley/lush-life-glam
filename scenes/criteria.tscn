@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://d24qb2ggds5en"]
+[gd_scene load_steps=6 format=3 uid="uid://cdxyhpioexon1"]
 
-[ext_resource type="Texture2D" uid="uid://c3igjs4qttd07" path="res://assets/salon_background.jpg" id="1_hktbd"]
-[ext_resource type="Script" path="res://scripts/introduction.gd" id="1_jwdpu"]
-[ext_resource type="Texture2D" uid="uid://dh1ju1g1apsrj" path="res://assets/speech_bubble_tail.png" id="3_6qxvi"]
-[ext_resource type="Texture2D" uid="uid://8bl12luwgj06" path="res://assets/speech_bubble.png" id="4_d34ut"]
-[ext_resource type="FontFile" uid="uid://dt2ur755qe8v6" path="res://assets/Nunito-Bold.ttf" id="5_vektn"]
+[ext_resource type="Texture2D" uid="uid://c3igjs4qttd07" path="res://assets/salon_background.jpg" id="1_4mowy"]
+[ext_resource type="Script" path="res://scripts/criteria.gd" id="1_s4io2"]
+[ext_resource type="Texture2D" uid="uid://dh1ju1g1apsrj" path="res://assets/speech_bubble_tail.png" id="2_6t0gc"]
+[ext_resource type="Texture2D" uid="uid://8bl12luwgj06" path="res://assets/speech_bubble.png" id="3_h5po5"]
+[ext_resource type="FontFile" uid="uid://dt2ur755qe8v6" path="res://assets/Nunito-Bold.ttf" id="4_27ax6"]
 
-[node name="Introduction" type="Node2D"]
-script = ExtResource("1_jwdpu")
+[node name="Criteria" type="Node2D"]
+script = ExtResource("1_s4io2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -15,20 +15,20 @@ script = ExtResource("1_jwdpu")
 z_index = -20
 position = Vector2(-0.161209, -0.278332)
 scale = Vector2(0.301614, 0.301614)
-texture = ExtResource("1_hktbd")
+texture = ExtResource("1_4mowy")
 
 [node name="SpeechBubbleTail" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(127.545, 21)
 scale = Vector2(1.0465, 1.12069)
-texture = ExtResource("3_6qxvi")
+texture = ExtResource("2_6t0gc")
 
 [node name="Speech Bubble" type="NinePatchRect" parent="."]
 offset_left = 55.0
 offset_top = -183.0
 offset_right = 496.0
 offset_bottom = 48.0
-texture = ExtResource("4_d34ut")
+texture = ExtResource("3_h5po5")
 patch_margin_left = 40
 patch_margin_top = 40
 patch_margin_right = 40
@@ -42,7 +42,7 @@ offset_top = 33.0
 offset_right = 406.0
 offset_bottom = 187.0
 theme_override_colors/font_color = Color(0.957031, 0.492188, 0.539063, 1)
-theme_override_fonts/font = ExtResource("5_vektn")
+theme_override_fonts/font = ExtResource("4_27ax6")
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
