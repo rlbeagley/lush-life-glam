@@ -1,10 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpdun2qynctif"]
+[gd_scene load_steps=26 format=3 uid="uid://cpdun2qynctif"]
 
 [ext_resource type="Texture2D" uid="uid://c3igjs4qttd07" path="res://assets/salon_background.jpg" id="1_1bhcl"]
 [ext_resource type="Texture2D" uid="uid://s4kvboote0q5" path="res://assets/options_background.png" id="2_2xybg"]
 [ext_resource type="Texture2D" uid="uid://pwcoc31uu83i" path="res://assets/option_button.png" id="3_5vs16"]
 [ext_resource type="Texture2D" uid="uid://d2y84wqethdrn" path="res://assets/option_button_pressed.png" id="4_k0gba"]
 [ext_resource type="Texture2D" uid="uid://o8tv4us8i4q5" path="res://assets/option_button_hover.png" id="5_nhdvy"]
+[ext_resource type="Texture2D" uid="uid://ciq2lj2xbr4sn" path="res://assets/hair_button_hover.png" id="6_3xl8d"]
+[ext_resource type="Texture2D" uid="uid://b1sr6jqlu5bnq" path="res://assets/hair_button.png" id="6_ejvla"]
+[ext_resource type="Texture2D" uid="uid://7wu15xctjwk3" path="res://assets/hair_button_pressed.png" id="7_xbo52"]
+[ext_resource type="Script" path="res://scripts/hair_select.gd" id="8_rca0v"]
+[ext_resource type="Script" path="res://scripts/body_select.gd" id="10_22h8i"]
+[ext_resource type="Texture2D" uid="uid://dveishb8vnhmd" path="res://assets/body_button.png" id="10_pck8r"]
+[ext_resource type="Texture2D" uid="uid://dv0u0o0pu6wte" path="res://assets/body_button_pressed.png" id="11_7l2sw"]
+[ext_resource type="Texture2D" uid="uid://beb7c6ynv8xpy" path="res://assets/body_button_hover.png" id="12_ab32g"]
+[ext_resource type="Texture2D" uid="uid://c1brfwfr4o4l6" path="res://assets/eyes_button.png" id="14_kfxmp"]
+[ext_resource type="Texture2D" uid="uid://num5wdxvl7e0" path="res://assets/eyes_button_pressed.png" id="15_cl0tw"]
+[ext_resource type="Texture2D" uid="uid://de8nbjpudubv0" path="res://assets/eyes_button_hover.png" id="16_q0dow"]
+[ext_resource type="Texture2D" uid="uid://jxccmgxqvde1" path="res://assets/eyebrows_button.png" id="17_yqyci"]
+[ext_resource type="Texture2D" uid="uid://c7sl0b4b3wje6" path="res://assets/eyebrows_button_pressed.png" id="18_ernrc"]
+[ext_resource type="Texture2D" uid="uid://bh4edk7ig4w6q" path="res://assets/eyebrows_button_hover.png" id="19_sotmt"]
+[ext_resource type="Texture2D" uid="uid://bnbgsocxlly6p" path="res://assets/lipstick_button.png" id="20_rk34b"]
+[ext_resource type="Texture2D" uid="uid://bfhk1ht4ype2e" path="res://assets/lipstick_button_pressed.png" id="21_jxuir"]
+[ext_resource type="Texture2D" uid="uid://cqhd3mbvaok6w" path="res://assets/lipstick_button_hover.png" id="22_h53rb"]
+[ext_resource type="Texture2D" uid="uid://bt6r1jao8wqej" path="res://assets/shirt_button.png" id="23_mg2a8"]
+[ext_resource type="Texture2D" uid="uid://bwgefl4bjjfcf" path="res://assets/shirt_button_pressed.png" id="24_yod2o"]
+[ext_resource type="Texture2D" uid="uid://b6yr7mrdtxsiv" path="res://assets/shirt_button_hover.png" id="25_85pv7"]
 
 [node name="Game" type="Node2D"]
 
@@ -21,11 +41,114 @@ position = Vector2(320, 5)
 scale = Vector2(0.644802, 0.644802)
 texture = ExtResource("2_2xybg")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 140.0
-offset_top = -116.0
-offset_right = 460.0
-offset_bottom = 217.0
+[node name="Hair 1" type="TextureButton" parent="."]
+offset_left = 95.0
+offset_top = -188.0
+offset_right = 304.0
+offset_bottom = 29.0
 texture_normal = ExtResource("3_5vs16")
 texture_pressed = ExtResource("4_k0gba")
 texture_hover = ExtResource("5_nhdvy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Hair 2" type="TextureButton" parent="."]
+offset_left = 336.0
+offset_top = -188.0
+offset_right = 545.0
+offset_bottom = 29.0
+texture_normal = ExtResource("3_5vs16")
+texture_pressed = ExtResource("4_k0gba")
+texture_hover = ExtResource("5_nhdvy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Hair 3" type="TextureButton" parent="."]
+offset_left = 95.0
+offset_top = 60.0
+offset_right = 304.0
+offset_bottom = 277.0
+texture_normal = ExtResource("3_5vs16")
+texture_pressed = ExtResource("4_k0gba")
+texture_hover = ExtResource("5_nhdvy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Hair 4" type="TextureButton" parent="."]
+offset_left = 336.0
+offset_top = 60.0
+offset_right = 545.0
+offset_bottom = 277.0
+texture_normal = ExtResource("3_5vs16")
+texture_pressed = ExtResource("4_k0gba")
+texture_hover = ExtResource("5_nhdvy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Hair Select" type="TextureButton" parent="."]
+offset_left = 93.0
+offset_top = -279.0
+offset_right = 176.0
+offset_bottom = -196.0
+texture_normal = ExtResource("6_ejvla")
+texture_pressed = ExtResource("7_xbo52")
+texture_hover = ExtResource("6_3xl8d")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_rca0v")
+
+[node name="Body Select" type="TextureButton" parent="."]
+offset_left = 167.0
+offset_top = -279.0
+offset_right = 250.0
+offset_bottom = -196.0
+texture_normal = ExtResource("10_pck8r")
+texture_pressed = ExtResource("11_7l2sw")
+texture_hover = ExtResource("12_ab32g")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_22h8i")
+
+[node name="Eyes Select" type="TextureButton" parent="."]
+offset_left = 241.0
+offset_top = -279.0
+offset_right = 324.0
+offset_bottom = -196.0
+texture_normal = ExtResource("14_kfxmp")
+texture_pressed = ExtResource("15_cl0tw")
+texture_hover = ExtResource("16_q0dow")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Eyebrows Select" type="TextureButton" parent="."]
+offset_left = 315.0
+offset_top = -279.0
+offset_right = 398.0
+offset_bottom = -196.0
+texture_normal = ExtResource("17_yqyci")
+texture_pressed = ExtResource("18_ernrc")
+texture_hover = ExtResource("19_sotmt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Lips Select" type="TextureButton" parent="."]
+offset_left = 389.0
+offset_top = -279.0
+offset_right = 472.0
+offset_bottom = -196.0
+texture_normal = ExtResource("20_rk34b")
+texture_pressed = ExtResource("21_jxuir")
+texture_hover = ExtResource("22_h53rb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Shirt Select" type="TextureButton" parent="."]
+offset_left = 463.0
+offset_top = -279.0
+offset_right = 546.0
+offset_bottom = -196.0
+texture_normal = ExtResource("23_mg2a8")
+texture_pressed = ExtResource("24_yod2o")
+texture_hover = ExtResource("25_85pv7")
+ignore_texture_size = true
+stretch_mode = 0
