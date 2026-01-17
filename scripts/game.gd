@@ -3,6 +3,10 @@ extends Node2D
 enum Category { BODY, HAIR, EYES, EYEBROWS, LIPS, SHIRT }
 var current_category = Category.HAIR
 
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		print("Global Click detected at: ", event.position)
+
 @onready var targets = {
 	Category.BODY: $Customer/Body,
 	Category.EYES: $Customer/Eyes,
@@ -91,8 +95,8 @@ func _on_category_pressed(category):
 
 func clear_option_selection():
 	for slot in option_slots:
-		if slot and slot is Button:
-			slot.pressed = false
+		if slot is BaseButton:
+			slot.button_pressed = false
 
 # Choose option
 func _on_option_pressed(index):
@@ -138,15 +142,19 @@ func _ready():
 		else:
 			push_warning("Category button missing: " + str(category))
 
+	# Option buttons
 	for i in range(option_slots.size()):
 		var slot = option_slots[i]
-		if slot and slot is Button:
-			var idx = i  # Capture index locally
+		if slot and slot is BaseButton:
+			var idx = i 
+			print("Connecting signal for: ", slot.name) 
+			
 			slot.pressed.connect(func() -> void:
+				print("SIGNAL FIRED: Slot ", idx, " clicked!") 
 				_on_option_pressed(idx)
 			)
 		else:
-			push_warning("Option button missing in slot %d" % i)
+			push_warning("Option button missing or not a Button at slot %d" % i)
 
 	if category_buttons[Category.HAIR]:
 		category_buttons[Category.HAIR].emit_signal("pressed")

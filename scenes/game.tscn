@@ -244,7 +244,7 @@ script = ExtResource("29_nj4vp")
 metadata/_edit_use_anchors_ = true
 
 [node name="Customer" parent="." instance=ExtResource("37_aqpng")]
-position = Vector2(-207, 110)
+position = Vector2(-205, 104)
 scale = Vector2(0.25, 0.25)
 
 [node name="Chair" type="Sprite2D" parent="."]

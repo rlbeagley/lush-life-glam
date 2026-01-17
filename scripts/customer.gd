@@ -1,0 +1,66 @@
+extends Node2D
+
+# Get parts from Customer
+@onready var body = $Body
+@onready var hair_back = $HairBack
+@onready var hair_front = $HairFront
+@onready var eyes = $Eyes
+@onready var eyebrows = $Eyebrows
+@onready var lips = $Lips
+@onready var shirt = $Shirt
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	restore_selections()
+
+# Texture change functions
+func change_body(tex: Texture2D):
+	body.texture = tex
+	Gamestate.selections["body"] = tex.resource_path
+
+func change_eyes(tex: Texture2D):
+	eyes.texture = tex
+	Gamestate.selections["eyes"] = tex.resource_path
+
+func change_eyebrows(tex: Texture2D):
+	eyebrows.texture = tex
+	Gamestate.selections["eyebrows"] = tex.resource_path
+
+func change_lips(tex: Texture2D):
+	lips.texture = tex
+	Gamestate.selections["lips"] = tex.resource_path
+
+func change_shirt(tex: Texture2D):
+	shirt.texture = tex
+	Gamestate.selections["shirt"] = tex.resource_path
+
+func change_hair(back_tex: Texture2D, front_tex: Texture2D):
+	hair_back.texture = back_tex
+	hair_front.texture = front_tex
+	Gamestate.selections["hair"] = {
+		"back": back_tex.resource_path,
+		"front": front_tex.resource_path
+	}
+
+
+# Restore player's choices from previous scene
+func restore_selections():
+	if Gamestate.selections["body"]:
+		body.texture = load(Gamestate.selections["body"])
+	
+	if Gamestate.selections["hair"]:
+		hair_back.texture = load(Gamestate.selections["hair"]["back"])
+		hair_front.texture = load(Gamestate.selections["hair"]["front"])
+
+	if Gamestate.selections["eyes"]:
+		eyes.texture = load(Gamestate.selections["eyes"])
+
+	if Gamestate.selections["eyebrows"]:
+		eyebrows.texture = load(Gamestate.selections["eyebrows"])
+
+	if Gamestate.selections["lips"]:
+		lips.texture = load(Gamestate.selections["lips"])
+
+	if Gamestate.selections["shirt"]:
+		shirt.texture = load(Gamestate.selections["shirt"])
+

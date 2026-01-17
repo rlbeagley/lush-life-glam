@@ -64,11 +64,6 @@ position = Vector2(-205, 104)
 scale = Vector2(0.25, 0.25)
 
 [node name="Chair" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(-187, 54)
-scale = Vector2(0.3, 0.3)
-
-[node name="Chair2" type="Sprite2D" parent="."]
 z_index = -10
 position = Vector2(-193.25, 58.25)
 scale = Vector2(0.298096, 0.298096)
