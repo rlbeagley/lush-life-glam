@@ -3,17 +3,20 @@ import cors from "cors";
 import dotenv from "dotenv";
 import * as Survey from "./survey.js"
 
-dotenv.config();
+
 const app = express();
 
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
+
 app.get("/health", (req, res) => {
     res.json({ ok: true });
 });
 
-app.get("/survey/:id", async (req, res) => {
+
+
+app.get("/survey/:id/details", async (req, res) => {
     try {
         const surveyId = req.params.id;
         const survey = await Survey.getSurvey(surveyId);
@@ -51,6 +54,17 @@ app.post("/survey/:collectorId/submit", async (req, res) => {
         res.status(500).json({ success: false, error: "Submission failed" });
     }
 });
+app.get("/survey/:id/collectors", async (req, res) => {
+  try {
+    const surveyId = req.params.id;
+    const collectors = await Survey.getCollectors(surveyId);
+    res.status(200).json(collectors);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch collectors" });
+  }
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Backend listening on port ${PORT}`));
