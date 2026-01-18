@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy2wa1dddcwt1"]
+
+[ext_resource type="AudioStream" uid="uid://berirelmbr6kd" path="res://music/lush_life.mp3" id="1_rprw3"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_rprw3")
+volume_db = -20.0
+autoplay = true
